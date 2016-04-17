@@ -8,8 +8,8 @@ This image is based on [evild/alpine-ruby](https://hub.docker.com/r/evild/alpine
 
 ## Version
 
-- `latest` [(Dockerfile)](https://github.com/Evild67/docker-alpine-wpscan/blob/master/Dockerfile)
-- `2.9` [(Dockerfile)](https://github.com/Evild67/docker-alpine-wordpress/blob/138621335cf7ad98d8daa8a7b4c43393c65cb635/Dockerfile)
+- `latest` [(Dockerfile)](https://github.com/Evild67/docker-alpine-wpscan/blob/master/latest/Dockerfile)
+- `2.9` [(Dockerfile)](https://github.com/Evild67/docker-alpine-wpscan/blob/master/release/Dockerfile)
 
 
 ## What is WPScan?
@@ -20,7 +20,7 @@ Automated builds of the image are available on Dockerhub and is the recommended 
 ```
 docker pull evild/alpine-wpscan:2.9
 ```
-You can also pull the latest tag which is built from the repository HEAD
+You can also pull the latest tag which is built from the repository HEAD. This build include HEAD from WPScan repository.
 ```
 docker pull evild/alpine-wpscan:latest
 ```
