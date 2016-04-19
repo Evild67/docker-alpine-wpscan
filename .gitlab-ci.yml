@@ -1,0 +1,28 @@
+image: docker
+
+stages:
+  - build
+  - test
+  - cleanup
+  - deploy
+
+build_job_wpscan:
+  stage: build
+  script:
+    - docker --version
+    - docker build -t evild/alpine-wpscan:latest latest
+
+test_job:
+  stage: test
+  script:
+    - docker run --rm evild/alpine-wpscan --update
+
+cleanup:
+  stage: cleanup
+  script:
+    - docker rm -f $(docker ps -aq)
+
+deploy_job:
+  stage: deploy
+  script:
+    - git push --mirror https://$GITHUB_TOKEN@github.com/Evild67/docker-alpine-wpscan.git
