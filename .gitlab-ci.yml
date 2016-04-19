@@ -3,7 +3,6 @@ image: docker
 stages:
   - build
   - test
-  - cleanup
   - deploy
 
 build_job_wpscan:
@@ -16,11 +15,6 @@ test_job:
   stage: test
   script:
     - docker run --rm evild/alpine-wpscan --update
-
-cleanup:
-  stage: cleanup
-  script:
-    - docker rm -f $(docker ps -aq)
 
 deploy_job:
   stage: deploy
